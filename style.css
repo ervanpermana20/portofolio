@@ -1,0 +1,432 @@
+/* ==========================================================================
+   1. EDIT WARNA & TEMA UTAMA (CSS VARIABLES)
+   ========================================================================== */
+:root {
+    /* EDIT: Warna Latar Belakang Utama (Midnight Blue Pekat / Hitam) */
+    --bg-color: #05070f;
+    
+    /* EDIT: Warna Kartu Kaca Transparan (Glassmorphism) */
+    --card-bg: rgba(15, 23, 42, 0.65);
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    /* EDIT: Warna Aksen/Sorotan Utama (Biru Apple) */
+    --accent-color: #3b82f6;
+    --accent-hover: #0071e3;
+    
+    /* EDIT: Warna Teks */
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+}
+
+/* RESET & DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-top: 80px;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 113, 227, 0.08) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* NAVBAR APPLE-STYLE */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 7, 15, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 0.8rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.counter-badge {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+/* KOTAK & BAGIAN UTAMA */
+.section {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.card-header.center {
+    justify-content: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent-color);
+}
+
+/* HERO SECTION & DASHBOARD GRID DI ATAS */
+.hero-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+/* STYLES UNTUK 6 KOTAK DI ATAS AVATAR */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.dash-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.dash-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    background: rgba(59, 130, 246, 0.12);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
+.dash-card .dash-icon {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-color);
+}
+
+.dash-card span {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-profile {
+    text-align: center;
+}
+
+.avatar-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem auto;
+}
+
+.avatar-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-section h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* BADGES SKILL */
+.skills-container {
+    margin-top: 1.5rem;
+}
+
+.skills-container h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* GRID LAYOUTS */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.sub-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.sub-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.sub-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.status-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.status-tag.WIP {
+    background: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+}
+
+.status-tag.Done {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.notes-box {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* TAB NOTES */
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--text-main);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.roadmap-list {
+    line-height: 2;
+    font-size: 0.95rem;
+}
+
+.roadmap-list .step {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* FAQ ACCORDION */
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    padding-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* KONTAK & SOSIAL MEDIA */
+.text-center {
+    text-align: center;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-btn:hover {
+    opacity: 0.85;
+}
+
+.social-btn.wa { background-color: #25D366; }
+.social-btn.ig { background-color: #E1306C; }
+.social-btn.github { background-color: #333; }
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+/* ANIMASI SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE DESIGN (HP & TABLET) */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .dashboard-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .hero-section h1 { font-size: 1.6rem; }
+}
